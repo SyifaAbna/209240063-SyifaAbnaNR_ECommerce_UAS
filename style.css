@@ -1,0 +1,283 @@
+/* === RESET === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cart {
+  background: white;
+  color: #1e3c72;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* === HERO === */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 3rem;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #dde6f7, #eaf1fd);
+  position: relative;
+  color: white;
+  height: 300px;
+}
+
+.hero-bg {
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+}
+
+.highlight {
+  color: #ffd700;
+}
+
+/* === BUTTON === */
+.btn {
+  background: #1e3c72;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+/* === KATEGORI === */
+.kategori-box {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.kategori-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.kategori-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.kategori-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* === PRODUK === */
+.produk-section {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.produk-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  padding: 1.2rem;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card .harga {
+  font-weight: bold;
+  color: #1e3c72;
+  margin: 0.5rem 0;
+}
+
+.product-card button {
+  background: #1e3c72;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  margin: 0.3rem;
+  cursor: pointer;
+}
+
+.lihat-detail {
+  font-size: 0.9rem;
+  color: #1e3c72;
+  text-decoration: underline;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  font-size: 0.95rem;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* === KONTAK === */
+.kontak-section {
+  padding: 4rem 2rem;
+  background: #eaf0fc;
+}
+
+.kontak-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.kontak-info {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.kontak-info p {
+  margin: 0.3rem 0;
+}
+
+/* === LAINNYA === */
+.center {
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: #1e3c72;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.filter-box {
+  margin: 1.5rem auto;
+}
+
+.filter-box select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #999;
+  font-size: 0.9rem;
+}

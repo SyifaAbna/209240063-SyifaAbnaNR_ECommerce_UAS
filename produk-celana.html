@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEANSYOU</title>
+  <link rel="stylesheet" href="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/css/style.css" />
+  <script src="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/js/script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><strong>JEANSYOU</strong></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="index.html#tentang">Tentang Kami</a></li>
+    <li><a href="index.html#kontak">Kontak</a></li>
+  </ul>
+  <div class="cart" onclick="bukaKeranjang()">🛒 <span id="jumlahKeranjang">0</span></div>
+</nav>
+
+<section class="produk-section center">
+  <h2>Koleksi Celana Jeans</h2>
+
+  <div class="filter-box">
+    <label>Filter Harga:</label>
+    <select onchange="filterHarga(this.value)">
+      <option value="all">Semua</option>
+      <option value="150">Di bawah 150rb</option>
+      <option value="180">150rb – 180rb</option>
+      <option value="200">Di atas 180rb</option>
+    </select>
+  </div>
+
+  <div class="produk-container" id="daftar-produk">
+
+    <div class="product-card" data-harga="175000">
+      <img src="images/produk1.webp" alt="Hugged Edition" />
+      <h4>Legit Fit – Hugged Edition</h4>
+      <p class="short-desc">Skinny fit membentuk kaki, edgy & sleek.</p>
+      <p class="harga">Rp 175.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Legit Fit – Hugged Edition', 'Celana skinny fit berbahan stretch premium. Nyaman, ringan, dan fleksibel untuk aktivitas harian.', '–', '38 cm / –', '50 cm', '72 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Legit Fit – Hugged Edition','celana',175000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Legit Fit – Hugged Edition',175000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="165000">
+      <img src="images/produk2.webp" alt="Steady Blue" />
+      <h4>Walk This Jean – Steady Blue</h4>
+      <p class="short-desc">Straight cut klasik cocok untuk semua gaya.</p>
+      <p class="harga">Rp 165.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Walk This Jean – Steady Blue', 'Jeans straight cut warna biru netral. Tampilan clean dan timeless.', '–', '40 cm / –', '52 cm', '76 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Walk This Jean – Steady Blue','celana',165000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Walk This Jean – Steady Blue',165000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="185000">
+      <img src="images/produk3.jpg" alt="Breezy Drop" />
+      <h4>Legit Fit – Breezy Drop</h4>
+      <p class="short-desc">Wide leg ala Korea. Chic & comfy.</p>
+      <p class="harga">Rp 185.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Legit Fit – Breezy Drop', 'Celana wide leg model Korea. High waist, loose fit. Adem dan stylish.', '–', '41 cm / –', '56 cm', '78 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Legit Fit – Breezy Drop','celana',185000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Legit Fit – Breezy Drop',185000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="190000">
+      <img src="images/produk4.avif" alt="Retro Wave" />
+      <h4>Walk This Jean – Retro Wave</h4>
+      <p class="short-desc">Bootcut jeans vintage vibe, klasik keren.</p>
+      <p class="harga">Rp 190.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Walk This Jean – Retro Wave', 'Bootcut jeans vibe retro tahun 90an. Stylish dan beda dari yang lain.', '–', '40 cm / –', '54 cm', '79 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Walk This Jean – Retro Wave','celana',190000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Walk This Jean – Retro Wave',190000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="160000">
+      <img src="images/produk5.jpeg" alt="Soft Rebel" />
+      <h4>Legit Fit – Soft Rebel</h4>
+      <p class="short-desc">Mom jeans santai, nyaman harian.</p>
+      <p class="harga">Rp 160.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Legit Fit – Soft Rebel', 'Mom jeans dengan cutting longgar. High waist dan nyaman untuk harian.', '–', '39 cm / –', '53 cm', '75 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Legit Fit – Soft Rebel','celana',160000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Legit Fit – Soft Rebel',160000)">Beli Sekarang</button>
+    </div>
+
+  </div>
+
+  <div style="margin-top:2rem">
+    <a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
+  </div>
+</section>
+<!-- Modal Keranjang -->
+<div id="modalKeranjang" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupKeranjang()">×</span>
+    <h3>Keranjang Belanja</h3>
+    <ul id="daftarKeranjang"></ul>
+    <p id="totalKeranjang">Total: Rp 0</p>
+    <button class="btn" onclick="bukaCheckout()">Checkout</button>
+  </div>
+</div>
+
+<!-- Modal Checkout -->
+<div id="modalCheckout" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupCheckout()">×</span>
+    <h3>Form Checkout</h3>
+    <form id="checkoutForm">
+      <input type="text" id="namaPembeli" placeholder="Nama Lengkap" required>
+      <input type="text" id="alamatPembeli" placeholder="Alamat Lengkap" required>
+      <input type="text" id="kontakPembeli" placeholder="Kontak (WA/IG/email)" required>
+      <select id="metodePembayaran" required>
+        <option value="">Metode Pembayaran</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="ewallet">E-Wallet</option>
+        <option value="cod">COD</option>
+      </select>
+      <button type="submit" class="btn">Checkout Sekarang</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Deskripsi -->
+<div id="modalDeskripsi" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupDeskripsi()">×</span>
+    <h3 id="judulDeskripsi"></h3>
+    <p id="isiDeskripsi"></p>
+    <div id="detailUkuran" style="margin-top: 1rem; font-size: 0.95rem;"></div>
+  </div>
+</div>
+
+
+<footer>
+  <p>&copy; 2025 JEANSYOU - Syifa Abna Nur Ramadhani</p>
+  <p>Website ini dibuat untuk memenuhi tugas UAS Komputer Aplikasi IT II</p>
+</footer>
+
+</body>
+</html>

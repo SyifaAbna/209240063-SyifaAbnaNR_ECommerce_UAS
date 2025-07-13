@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEANSYOU</title>
+  <link rel="stylesheet" href="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/css/style.css" />
+  <script src="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/js/script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <strong>JEANSYOU</strong><br />
+    <small>Jeans for You</small>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#tentang">Tentang Kami</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+  <div class="cart" onclick="bukaKeranjang()">🛒 <span id="jumlahKeranjang">0</span></div>
+</nav>
+
+<section id="Beranda" class="hero hero-bg">
+  <div class="hero-text">
+    <h1>Selamat datang di <span class="highlight">JEANSYOU</span></h1>
+    <p><em>Your Affordable Jeans Ever.</em></p>
+    <a href="#kategori" class="btn">Lihat Koleksi</a>
+  </div>
+</section>
+
+<section id="kategori" class="kategori-box center">
+  <h2>Jelajahi Produk Kami</h2>
+  <div class="kategori-grid">
+
+    <div class="kategori-card">
+      <img src="images/kategori-celana.png" alt="Celana Jeans" />
+      <h3>Celana Jeans</h3>
+      <a href="produk-celana.html" class="btn">Lihat Celana</a>
+    </div>
+
+    <div class="kategori-card">
+      <img src="images/kategori-jaket.webp" alt="Jaket Jeans" />
+      <h3>Jaket Jeans</h3>
+      <a href="produk-jaket.html" class="btn">Lihat Jaket</a>
+    </div>
+
+    <div class="kategori-card">
+      <img src="images/kategori-rok.webp" alt="Rok Jeans" />
+      <h3>Rok Jeans</h3>
+      <a href="produk-rok.html" class="btn">Lihat Rok</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="tentang" class="kontak-section center">
+  <h2>Tentang Kami</h2>
+  <div class="tentang-konten">
+    <p><strong>JEANSYOU</strong> adalah brand denim lokal yang menghadirkan koleksi celana, jaket, dan rok jeans untuk segala gaya dan ukuran. Dengan bahan berkualitas dan model terkini, kami memastikan kenyamanan dan kepercayaan diri bagi semua pelanggan.</p>
+    <p>Kami menyediakan ukuran lengkap dari minisize hingga oversized agar semua orang bisa menemukan gaya yang cocok. Setiap produk kami dibuat dengan cinta dan detail.</p>
+  </div>
+</section>
+
+<section id="kontak" class="kontak-section center">
+  <h2>Kontak Kami</h2>
+  <form class="kontak-form">
+    <input type="text" placeholder="Nama" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
+    <button class="btn" type="submit">Kirim</button>
+  </form>
+
+  <div class="kontak-info">
+    <p>📱 WhatsApp: 0810-2218-0506</a></p>
+    <p>📷 Instagram: @jeansyou.id</a></p>
+    <p>🛒 Shopee: shopee.co.id/jeansyou</a></p>
+    <p>📧 Email: jeansyou@gmail.com</p>
+  </div>
+</section>
+
+<div id="modalKeranjang" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupKeranjang()">×</span>
+    <h3>Keranjang Belanja</h3>
+    <ul id="daftarKeranjang"></ul>
+    <p id="totalKeranjang">Total: Rp 0</p>
+    <button class="btn" onclick="bukaCheckout()">Checkout</button>
+  </div>
+</div>
+
+<div id="modalCheckout" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupCheckout()">×</span>
+    <h3>Form Checkout</h3>
+    <form id="checkoutForm">
+      <input type="text" id="namaPembeli" placeholder="Nama Lengkap" required>
+      <input type="text" id="alamatPembeli" placeholder="Alamat Lengkap" required>
+      <input type="text" id="kontakPembeli" placeholder="Kontak (WA/IG/email)" required>
+      <select id="metodePembayaran" required>
+        <option value="">Metode Pembayaran</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="ewallet">E-Wallet</option>
+        <option value="cod">COD</option>
+      </select>
+      <button type="submit" class="btn">Checkout Sekarang</button>
+    </form>
+  </div>
+</div>
+
+<div id="modalDeskripsi" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupDeskripsi()">×</span>
+    <h3 id="judulDeskripsi"></h3>
+    <p id="isiDeskripsi"></p>
+    <div id="detailUkuran" style="margin-top: 1rem; font-size: 0.95rem;"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 JEANSYOU - Syifa Abna Nur Ramadhani - 209240063</p>
+  <p>Website ini dibuat untuk memenuhi tugas UAS Komputer Aplikasi IT II</p>
+</footer>
+
+</body>
+</html>

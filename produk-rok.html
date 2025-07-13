@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEANSYOU</title>
+  <link rel="stylesheet" href="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/css/style.css" />
+  <script src="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/js/script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><strong>JEANSYOU</strong></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="index.html#tentang">Tentang Kami</a></li>
+    <li><a href="index.html#kontak">Kontak</a></li>
+  </ul>
+  <div class="cart" onclick="bukaKeranjang()">🛒 <span id="jumlahKeranjang">0</span></div>
+</nav>
+
+<section class="produk-section center">
+  <h2>Koleksi Rok Jeans</h2>
+
+  <div class="filter-box">
+    <label>Filter Harga:</label>
+    <select onchange="filterHarga(this.value)">
+      <option value="all">Semua</option>
+      <option value="100">Di bawah 100rb</option>
+      <option value="115">100rb – 115rb</option>
+      <option value="120">Di atas 115rb</option>
+    </select>
+  </div>
+
+  <div class="produk-container" id="daftar-produk">
+
+    <div class="product-card" data-harga="95000">
+      <img src="images/rok1.jpg" alt="Cutie Raw" />
+      <h4>Skirtchic – Cutie Raw</h4>
+      <p class="short-desc">Mini skirt playful & manis.</p>
+      <p class="harga">Rp 95.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Skirtchic – Cutie Raw', 'Mini skirt dengan potongan raw hem. Gaya youthful dan energik untuk aktivitas santai.', '–', '35 cm / –', '–', '70 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Skirtchic – Cutie Raw','rok',95000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Skirtchic – Cutie Raw',95000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="110000">
+      <img src="images/rok2.jpg" alt="Soft Spin" />
+      <h4>Jeanie Belle – Soft Spin</h4>
+      <p class="short-desc">Midi skirt girly elegan.</p>
+      <p class="harga">Rp 110.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Jeanie Belle – Soft Spin', 'Midi skirt dengan bahan jatuh dan flowy. Cocok untuk acara semi-formal dan casual.', '–', '36 cm / –', '–', '72 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Jeanie Belle – Soft Spin','rok',110000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Jeanie Belle – Soft Spin',110000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="125000">
+      <img src="images/rok3.jpg" alt="Blue Drift" />
+      <h4>Skirtchic – Blue Drift</h4>
+      <p class="short-desc">Maxi skirt modest dan stylish.</p>
+      <p class="harga">Rp 125.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Skirtchic – Blue Drift', 'Maxi skirt berbahan denim ringan. Pilihan stylish dan sopan untuk semua usia.', '–', '37 cm / –', '–', '74 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Skirtchic – Blue Drift','rok',125000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Skirtchic – Blue Drift',125000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="100000">
+      <img src="images/rok4.jpeg" alt="Angelic Fit" />
+      <h4>Jeanie Belle – Angelic Fit</h4>
+      <p class="short-desc">A-Line mengembang dari pinggang.</p>
+      <p class="harga">Rp 100.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Jeanie Belle – Angelic Fit', 'Rok A-line simple namun anggun. Potongan flare lembut cocok untuk tampilan feminin.', '–', '35 cm / –', '–', '72 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Jeanie Belle – Angelic Fit','rok',100000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Jeanie Belle – Angelic Fit',100000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="115000">
+      <img src="images/rok5.avif" alt="Bold Cut" />
+      <h4>Skirtchic – Bold Cut</h4>
+      <p class="short-desc">Frayed hem gaya street-style.</p>
+      <p class="harga">Rp 115.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Skirtchic – Bold Cut', 'Rok dengan potongan frayed edge. Gaya edgy dan street-style kekinian.', '–', '36 cm / –', '–', '74 cm')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Skirtchic – Bold Cut','rok',115000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Skirtchic – Bold Cut',115000)">Beli Sekarang</button>
+    </div>
+
+  </div>
+
+  <div style="margin-top:2rem">
+    <a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
+  </div>
+</section>
+<!-- Modal Keranjang -->
+<div id="modalKeranjang" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupKeranjang()">×</span>
+    <h3>Keranjang Belanja</h3>
+    <ul id="daftarKeranjang"></ul>
+    <p id="totalKeranjang">Total: Rp 0</p>
+    <button class="btn" onclick="bukaCheckout()">Checkout</button>
+  </div>
+</div>
+
+<!-- Modal Checkout -->
+<div id="modalCheckout" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupCheckout()">×</span>
+    <h3>Form Checkout</h3>
+    <form id="checkoutForm">
+      <input type="text" id="namaPembeli" placeholder="Nama Lengkap" required>
+      <input type="text" id="alamatPembeli" placeholder="Alamat Lengkap" required>
+      <input type="text" id="kontakPembeli" placeholder="Kontak (WA/IG/email)" required>
+      <select id="metodePembayaran" required>
+        <option value="">Metode Pembayaran</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="ewallet">E-Wallet</option>
+        <option value="cod">COD</option>
+      </select>
+      <button type="submit" class="btn">Checkout Sekarang</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Deskripsi -->
+<div id="modalDeskripsi" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupDeskripsi()">×</span>
+    <h3 id="judulDeskripsi"></h3>
+    <p id="isiDeskripsi"></p>
+    <div id="detailUkuran" style="margin-top: 1rem; font-size: 0.95rem;"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 JEANSYOU - Syifa Abna Nur Ramadhani</p>
+  <p>Website ini dibuat untuk memenuhi tugas UAS Komputer Aplikasi IT II</p>
+</footer>
+
+</body>
+</html>

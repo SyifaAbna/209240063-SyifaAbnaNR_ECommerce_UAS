@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEANSYOU</title>
+  <link rel="stylesheet" href="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/css/style.css" />
+  <script src="/209240063-SyifaAbnaNurRamadhani_ECommerce_UAS/js/script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><strong>JEANSYOU</strong></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="index.html#tentang">Tentang Kami</a></li>
+    <li><a href="index.html#kontak">Kontak</a></li>
+  </ul>
+  <div class="cart" onclick="bukaKeranjang()">🛒 <span id="jumlahKeranjang">0</span></div>
+</nav>
+
+<section class="produk-section center">
+  <h2>Koleksi Jaket Jeans</h2>
+
+  <div class="filter-box">
+    <label>Filter Harga:</label>
+    <select onchange="filterHarga(this.value)">
+      <option value="all">Semua</option>
+      <option value="180">Di bawah 180rb</option>
+      <option value="210">180rb – 210rb</option>
+      <option value="220">Di atas 210rb</option>
+    </select>
+  </div>
+
+  <div class="produk-container" id="daftar-produk">
+
+    <div class="product-card" data-harga="195000">
+      <img src="images/jaket1.jpg" alt="Raw Rider" />
+      <h4>Upper Crush – Raw Rider</h4>
+      <p class="short-desc">Jaket klasik versatile, cocok semua gaya.</p>
+      <p class="harga">Rp 195.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Upper Crush – Raw Rider', 'Jaket denim warna navy dengan potongan regular. Nyaman dipakai sehari-hari untuk gaya kasual atau semi formal.', '100 cm', '44 cm / 60 cm', '–', '–')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Upper Crush – Raw Rider','jaket',195000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Upper Crush – Raw Rider',195000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="210000">
+      <img src="images/jaket2.jpeg" alt="Chillstorm" />
+      <h4>Layer Up – Chillstorm</h4>
+      <p class="short-desc">Oversized denim Korea vibes.</p>
+      <p class="harga">Rp 210.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Layer Up – Chillstorm', 'Jaket oversized dengan warna washed blue. Cocok untuk street-style dan gaya Korea casual.', '110 cm', '47 cm / 61 cm', '–', '–')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Layer Up – Chillstorm','jaket',210000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Layer Up – Chillstorm',210000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="205000">
+      <img src="images/jaket3.jpeg" alt="Mini Blaze" />
+      <h4>Upper Crush – Mini Blaze</h4>
+      <p class="short-desc">Cropped jacket bold untuk layering.</p>
+      <p class="harga">Rp 205.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Upper Crush – Mini Blaze', 'Jaket pendek dengan model cropped fit. Cocok untuk perempuan aktif yang suka gaya bold dan feminim.', '92 cm', '41 cm / 58 cm', '–', '–')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Upper Crush – Mini Blaze','jaket',205000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Upper Crush – Mini Blaze',205000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="230000">
+      <img src="images/jaket4.jpeg" alt="Arctic Mood" />
+      <h4>Layer Up – Arctic Mood</h4>
+      <p class="short-desc">Sherpa denim hangat dan stylish.</p>
+      <p class="harga">Rp 230.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Layer Up – Arctic Mood', 'Jaket denim dengan lapisan bulu sherpa di bagian dalam. Sangat cocok untuk cuaca dingin atau musim hujan.', '108 cm', '45 cm / 62 cm', '–', '–')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Layer Up – Arctic Mood','jaket',230000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Layer Up – Arctic Mood',230000)">Beli Sekarang</button>
+    </div>
+
+    <div class="product-card" data-harga="215000">
+      <img src="images/jaket5.jpg" alt="Urban Layer" />
+      <h4>Upper Crush – Urban Layer</h4>
+      <p class="short-desc">Jaket hoodie denim anti mainstream.</p>
+      <p class="harga">Rp 215.000</p>
+      <span class="lihat-detail" onclick="lihatDeskripsi('Upper Crush – Urban Layer', 'Jaket denim dengan hoodie abu-abu, desain edgy dan unik. Tampil beda dengan gaya urban khas remaja.', '104 cm', '46 cm / 61 cm', '–', '–')">Lihat Detail...</span>
+      <button onclick="tambahKeKeranjang('Upper Crush – Urban Layer','jaket',215000)">Tambah ke Keranjang</button>
+      <button onclick="beliSekarang('Upper Crush – Urban Layer',215000)">Beli Sekarang</button>
+    </div>
+
+  </div>
+
+  <div style="margin-top:2rem">
+    <a href="index.html" class="btn">⬅ Kembali ke Beranda</a>
+  </div>
+</section>
+<!-- Modal Keranjang -->
+<div id="modalKeranjang" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupKeranjang()">×</span>
+    <h3>Keranjang Belanja</h3>
+    <ul id="daftarKeranjang"></ul>
+    <p id="totalKeranjang">Total: Rp 0</p>
+    <button class="btn" onclick="bukaCheckout()">Checkout</button>
+  </div>
+</div>
+
+<!-- Modal Checkout -->
+<div id="modalCheckout" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupCheckout()">×</span>
+    <h3>Form Checkout</h3>
+    <form id="checkoutForm">
+      <input type="text" id="namaPembeli" placeholder="Nama Lengkap" required>
+      <input type="text" id="alamatPembeli" placeholder="Alamat Lengkap" required>
+      <input type="text" id="kontakPembeli" placeholder="Kontak (WA/IG/email)" required>
+      <select id="metodePembayaran" required>
+        <option value="">Metode Pembayaran</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="ewallet">E-Wallet</option>
+        <option value="cod">COD</option>
+      </select>
+      <button type="submit" class="btn">Checkout Sekarang</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Deskripsi -->
+<div id="modalDeskripsi" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="tutupDeskripsi()">×</span>
+    <h3 id="judulDeskripsi"></h3>
+    <p id="isiDeskripsi"></p>
+    <div id="detailUkuran" style="margin-top: 1rem; font-size: 0.95rem;"></div>
+  </div>
+</div>
+
+
+<footer>
+  <p>&copy; 2025 JEANSYOU - Syifa Abna Nur Ramadhani</p>
+  <p>Website ini dibuat untuk memenuhi tugas UAS Komputer Aplikasi IT II</p>
+</footer>
+
+</body>
+</html>
